@@ -1,6 +1,6 @@
 package s01;
 
-public class Level2 {
+public class Level1 {
     public static int odometer(int[] oksana) {
         int S = 0;
         for (int i = 0; i < oksana.length - 1; i += 2) {
