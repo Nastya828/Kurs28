@@ -22,7 +22,7 @@ public class Level1 {
 
 
     public static int ConquestCampaign(int N, int M, int L, int[] battalion) {
-        int counterDays = 0;
+        int counterDays = 1;
         int[][] field = new int[N][M];
 
         for (int i = 0; i < battalion.length - 1; i += 2) {
@@ -35,23 +35,18 @@ public class Level1 {
         while (!flag) {
             for (int i = 0; i < N; i++) {
                 for (int j = 0; j < M; j++) {
-                    if (field[i][j] == -1) {
+                    if (((field[i][j] == -1) || (field[i][j] == counterDays)) && counterDays >= 1) {
                         value(field, i - 1, j, counterDays + 1);
                         value(field, i + 1, j, counterDays + 1);
                         value(field, i, j - 1, counterDays + 1);
                         value(field, i, j + 1, counterDays + 1);
-                    } else if (field[i][j] == counterDays - 1) {
-                        value(field, i - 1, j, counterDays);
-                        value(field, i + 1, j, counterDays);
-                        value(field, i, j - 1, counterDays);
-                        value(field, i, j + 1, counterDays);
+
                     }
                 }
             }
-            flag = findPointNull(field);
             counterDays++;
+            flag = findPointNull(field);
         }
-
         return counterDays;
     }
 
