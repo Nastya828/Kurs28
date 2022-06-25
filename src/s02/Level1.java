@@ -31,7 +31,7 @@ public class Level1 {
             field[x - 1][y - 1] = -1;
         }
 
-        boolean flag = false;
+        boolean flag = findPointNull(field);
         while (!flag) {
             for (int i = 0; i < N; i++) {
                 for (int j = 0; j < M; j++) {
