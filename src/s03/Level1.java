@@ -2,16 +2,36 @@ package s03;
 
 public class Level1 {
 
-    public static int searchMax(int[] a) {
-        int max = a[0];
-        int index = 0;
-        for (int i = 1; i < a.length; i++) {
-            if (a[i] > max) {
-                max = a[i];
-                index = i;
+    public static int[] sortAsc(int[] a) {
+        boolean flagAsc = false;
+        while (!flagAsc) {
+            flagAsc = true;
+            for (int i = 0; i < a.length - 1; i++) {
+                if (a[i] > a[i + 1]) {
+                    flagAsc = false;
+                    a[i] = a[i + 1] + a[i];
+                    a[i + 1] = a[i] - a[i + 1];
+                    a[i] = a[i] - a[i + 1];
+                }
             }
         }
-        return index;
+        return a;
+    }
+
+    public static int[] sortDesc(int[] a) {
+        boolean flagDesc = false;
+        while (!flagDesc) {
+            flagDesc = true;
+            for (int j = a.length - 1; j > a.length / 2 + 1; j--) {
+                if (a[j] > a[j - 1]) {
+                    flagDesc = false;
+                    a[j] = a[j - 1] + a[j];
+                    a[j - 1] = a[j] - a[j - 1];
+                    a[j] = a[j] - a[j - 1];
+                }
+            }
+        }
+        return a;
     }
 
     public static int[] MadMax(int N, int[] Tele) {
@@ -19,36 +39,11 @@ public class Level1 {
             return Tele;
         } else {
             int middle = (N / 2);
-            int indexMax = searchMax(Tele);
-            Tele[middle] = Tele[indexMax] + Tele[middle];
-            Tele[indexMax] = Tele[middle] - Tele[indexMax];
-            Tele[middle] = Tele[middle] - Tele[indexMax];
-
-            boolean flagAsc = false;
-            while (!flagAsc) {
-                flagAsc = true;
-                for (int i = 0; i < middle - 1; i++) {
-                    if (Tele[i] > Tele[i + 1]) {
-                        flagAsc = false;
-                        Tele[i] = Tele[i + 1] + Tele[i];
-                        Tele[i + 1] = Tele[i] - Tele[i + 1];
-                        Tele[i] = Tele[i] - Tele[i + 1];
-                    }
-                }
-            }
-
-            boolean flagDesc = false;
-            while (!flagDesc) {
-                flagDesc = true;
-                for (int j = Tele.length - 1; j > middle + 1; j--) {
-                    if (Tele[j] > Tele[j - 1]) {
-                        flagDesc = false;
-                        Tele[j] = Tele[j - 1] + Tele[j];
-                        Tele[j - 1] = Tele[j] - Tele[j - 1];
-                        Tele[j] = Tele[j] - Tele[j - 1];
-                    }
-                }
-            }
+            sortAsc(Tele);
+            Tele[middle] = Tele[Tele.length - 1] + Tele[middle];
+            Tele[Tele.length - 1] = Tele[middle] - Tele[Tele.length - 1];
+            Tele[middle] = Tele[middle] - Tele[Tele.length - 1];
+            sortDesc(Tele);
         }
         return Tele;
     }
