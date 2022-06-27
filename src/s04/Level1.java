@@ -28,8 +28,8 @@ public class Level1 {
         for (int i = 0; i < ids.length; i++) {
             idsCopy[i] = ids[i];
         }
-        sortAsc(idsCopy); //  копия массива сотрудников
-        sortAsc(salary); //  массив зарплат
+        sortAsc(idsCopy);
+        sortAsc(salary);
         Map<Integer, Integer> map = new HashMap<>(idsCopy.length);
         for (int i = 0; i < N; i++) {
             map.put(idsCopy[i], salary[i]);
