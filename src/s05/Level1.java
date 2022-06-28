@@ -8,7 +8,7 @@ public class Level1 {
                 {5, 2, 8},
                 {4, 3, 7}
         };
-        double pathNext = 1.0;
+        int pathNext = 1;
         double pathD = Math.sqrt(Math.pow(pathNext, 2.0) + Math.pow(pathNext, 2.0));
         int[] index = new int[4];
         for (int i = 0; i < matrix.length; i++) {
@@ -27,7 +27,6 @@ public class Level1 {
         } else {
             return pathD;
         }
-
     }
 
     public static String PatternUnlock(int N, int[] hits) {
@@ -39,12 +38,15 @@ public class Level1 {
 
         StringBuilder str = new StringBuilder();
         String s = String.format("%.5f", summa);
-        char[] chars = s.toCharArray();
-        for (char aChar : chars) {
+        for (char aChar : s.toCharArray()) {
             if (!(aChar == '0' || aChar == '.')) {
                 str.append(aChar);
             }
         }
-        return str.toString();
+        if (str.length() == 1) {
+            return String.valueOf(str.charAt(0));
+        } else {
+            return str.toString();
+        }
     }
 }

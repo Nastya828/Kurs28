@@ -8,7 +8,7 @@ public class Task06 {
         String result = Level1.PatternUnlock(N, array);
         System.out.println("result = " + result);
         int[] array2 = {2,1,9};
-        int N2 = array2.length;
+        int N2 = 3;
         String result2 = Level1.PatternUnlock(N2, array2);
         System.out.println("result = " +  result2);
         //PatternUnlock(3, [2,1,9]) = '2'
