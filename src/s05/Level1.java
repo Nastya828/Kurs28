@@ -1,7 +1,5 @@
 package s05;
 
-import java.text.DecimalFormat;
-
 public class Level1 {
 
     public static double search(int x, int y) {
@@ -34,10 +32,19 @@ public class Level1 {
 
     public static String PatternUnlock(int N, int[] hits) {
         double summa = 0.0;
-        for (int i = 0; i < hits.length - 1; i++) {
+        for (int i = 0; i < N - 1; i++) {
             double way = search(hits[i], hits[i + 1]);
             summa += way;
         }
-        return (new DecimalFormat("#0.00000").format(summa)).replaceAll("[0\\.]+", "");
+
+        StringBuilder str = new StringBuilder();
+        String s = String.format("%.5f", summa);
+        char[] chars = s.toCharArray();
+        for (char aChar : chars) {
+            if (!(aChar == '0' || aChar == '.')) {
+                str.append(aChar);
+            }
+        }
+        return str.toString();
     }
 }
