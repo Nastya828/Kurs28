@@ -1,5 +1,9 @@
 package s05;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.text.NumberFormat;
+
 public class Level1 {
 
     public static double search(int x, int y) {
@@ -30,6 +34,10 @@ public class Level1 {
     }
 
     public static String PatternUnlock(int N, int[] hits) {
+        DecimalFormat format = (DecimalFormat) NumberFormat.getInstance();
+        DecimalFormatSymbols symbols = format.getDecimalFormatSymbols();
+        char sep = symbols.getDecimalSeparator();
+
         double summa = 0.0;
         for (int i = 0; i < N - 1; i++) {
             double way = search(hits[i], hits[i + 1]);
@@ -39,14 +47,10 @@ public class Level1 {
         StringBuilder str = new StringBuilder();
         String s = String.format("%.5f", summa);
         for (char aChar : s.toCharArray()) {
-            if (!(aChar == '0' || aChar == '.')) {
+            if (!(aChar == '0' || aChar == sep)) {
                 str.append(aChar);
             }
         }
-        if (str.length() == 1) {
-            return String.valueOf(str.charAt(0));
-        } else {
-            return str.toString();
-        }
+        return str.toString();
     }
 }
