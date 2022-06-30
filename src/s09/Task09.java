@@ -13,8 +13,9 @@ public class Task09 {
         System.out.println(Level1.TheRabbitsFoot(result, flag2));
         String str = "омоюу толл дюиа акчп йрьк";
         String res = Level1.TheRabbitsFoot(str, false);
-        System.out.println(res);
+        System.out.println(res +  " res = " + res.length());
         System.out.println(Level1.TheRabbitsFoot((Level1.TheRabbitsFoot(str, false)), true));
+
 
     }
 }

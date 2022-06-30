@@ -67,7 +67,9 @@ public class Level1 {
             StringBuilder resultBuilder = new StringBuilder();
             for (int i = 0; i < n; i++) {
                 for (int j = 0; j < m; j++) {
-                    resultBuilder.append(matrix1[i][j]);
+                    if(matrix1[i][j] != ' ') {
+                        resultBuilder.append(matrix1[i][j]);
+                    }
                 }
             }
             result = resultBuilder.toString();
