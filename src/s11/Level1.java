@@ -10,6 +10,8 @@ public class Level1 {
             String s = s1;
             s1 = s2;
             s2 = s;
+        } else if (l1 == l2 && s1.compareTo(s2) == 0) {
+            return "0";
         }
 
         for (int i = 0; i < Math.abs(l1 - l2); i++) {
@@ -27,7 +29,9 @@ public class Level1 {
                 x = 0;
             }
             result = c + result;
-
+        }
+        while (result.charAt(0) == '0') {
+            result = result.replace("0", "");
         }
         return result;
     }

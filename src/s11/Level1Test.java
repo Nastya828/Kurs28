@@ -9,6 +9,6 @@ class Level1Test {
 
     @Test
     void patternUnlock() {
-        Assertions.assertEquals(Level1.BigMinus("9", "10009"), "10000");
+        Assertions.assertEquals(Level1.BigMinus("34", "1234567891"), "1234567857");
     }
 }
