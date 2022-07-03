@@ -28,7 +28,7 @@ public class Level1 {
         double d = 0;
         if (summa != 0) {
             double p = (max[0] * 100) / summa;
-            double x = Math.pow(10, 2);
+            double x = Math.pow(10, 3);
             d = Math.ceil(p * x) / x;
         }
 
