@@ -16,6 +16,15 @@ class Level1Test {
        Assertions.assertTrue(Level1.TankRush(2, 4, "1234 2297", 2, 4, "1234 2297"));
        Assertions.assertTrue(Level1.TankRush(1, 4, "1234", 1, 1, "2"));
        Assertions.assertFalse(Level1.TankRush(1, 4, "1234", 0, 0, ""));
-       Assertions.assertFalse(Level1.TankRush(0, 0, "", 0, 0, ""));
+        int[][] x = {
+                {0,2,9,4,0,2},
+                {5,6,0,2,0,2},
+                {0,2,9,6,9,4},
+                {7,8,0,2,8,8}
+        };
+
+
+       Assertions.assertFalse(Level1.TankRush(4,6,"029402 560202 029694 780288",2,2,"03 78"));
+       Assertions.assertTrue(Level1.TankRush(4,6,"029402 560202 029694 780288",1,2,"96"));
     }
 }
