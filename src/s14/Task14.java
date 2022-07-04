@@ -5,8 +5,8 @@ public class Task14 {
 
         int L = 10, N = 2;
         int[][] track  = {
-                {3,5,5},
-                {5,2,2}
+                {11,5,5},
+                {15,2,2}
         };
 
         int res = Level1.Unmanned(L, N, track);
