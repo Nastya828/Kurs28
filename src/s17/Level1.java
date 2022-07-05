@@ -10,11 +10,9 @@ public class Level1 {
             }
             k = i;
         }
-        if (k == c.length - 1) {
-            return true;
-        } else {
-            return false;
-        }
+
+            return (k == c.length - 1);
+
     }
 
 
