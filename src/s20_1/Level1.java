@@ -39,9 +39,8 @@ public class Level1 {
             res[i + 1] = m.getValue();
             i += 2;
         }
-
-        return (res[1] > res[3] && res[3] == 1 && ((res[2] == 1) || (res[2] - res[0] == 1))) ||
-                (res[1] < res[3] && res[1] == 1 && ((res[0] == 1) || (res[0] - res[2] == 1)));
+        return (res[1] >= res[3] && res[3] == 1 && ((res[2] == 1) || (res[2] - res[0] == 1))) ||
+                (res[1] <= res[3] && res[1] == 1 && ((res[0] == 1) || (res[0] - res[2] == 1)));
     }
 
 }

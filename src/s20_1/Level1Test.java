@@ -11,7 +11,7 @@ class Level1Test {
     void sherlockValidString() {
         Assertions.assertTrue(Level1.SherlockValidString("xyuu"));
         Assertions.assertTrue(Level1.SherlockValidString("xyzaa"));
-        Assertions.assertTrue(Level1.SherlockValidString("xxxxxiiiiiooooop"));
+        Assertions.assertTrue(Level1.SherlockValidString("xxxxxiiiiii"));
         Assertions.assertTrue(Level1.SherlockValidString("xxyyz"));
 
         Assertions.assertFalse(Level1.SherlockValidString("xyzzz"));
