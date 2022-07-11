@@ -5,6 +5,9 @@ import java.util.Arrays;
 public class Level1 {
 
     public static boolean Football(int[] F, int N) {
+        if (order(F) || N == 1) {
+            return false;
+        }
 
         int[] f1 = Arrays.copyOf(F, F.length);
 

@@ -17,7 +17,7 @@ public class Task24 {
         int[] x2 = {1, 7, 5, 3, 9};
         System.out.println(Level1.Football(x2, x2.length));
 
-        int[] x3 = {1};
+        int[] x3 = {1, 2, 3};
         System.out.println(Level1.Football(x3, x3.length));
 
     }
